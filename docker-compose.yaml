@@ -17,27 +17,25 @@ services:
   prod:
     <<: *base_service
     ports:
-      - "${PROD_PORT:-8080}:8080"
+      - "${PROD_PORT:-18080}:8080"
     profiles: ["prod"]
     build:
       context: .
       dockerfile: Dockerfile
       target: runtime
     volumes:
-      - *v_prod
+      - *v_data
 
   dev:
     <<: *base_service
     ports:
-      - "${DEV_PORT:-8081}:8080"
+      - "${DEV_PORT:-18081}:8080"
     profiles: ["dev"]
-    env_file:
-      - .env
     build:
       context: .
       dockerfile: Dockerfile
       target: dev
     volumes:
-      - *v_dev
-      - *v_src
+      - *v_data
+      - .:/api
     command: /bin/bash

@@ -13,10 +13,10 @@ from fastapi.routing import APIRoute
 from starlette.middleware.cors import CORSMiddleware
 from loguru import logger
 
-from source.api.v1.routes import api_router as api_v1_router
-from source.core.config import config
-from source.utils.log import setup_logging
-from source.version import app_title, app_description, version_info, version_number
+from backend.api.v1.routes import api_router as api_v1_router
+from backend.core.config import config
+from backend.utils.log import setup_logging
+from backend.version import app_title, app_description, version_info, version_number
 
 load_dotenv()
 openai.api_key = os.environ.get("OPENAI_API_KEY", "")

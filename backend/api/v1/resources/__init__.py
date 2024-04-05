@@ -1,4 +1,4 @@
-from source.api.v1.resources import health, kakao
+from backend.api.v1.resources import health
 
 __all__ = [
     "health",

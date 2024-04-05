@@ -1,6 +1,6 @@
 import os
 from dataclasses import make_dataclass
-from source.core.parsers import parse_origins_list
+from backend.core.parsers import parse_origins_list
 
 
 def get_config():

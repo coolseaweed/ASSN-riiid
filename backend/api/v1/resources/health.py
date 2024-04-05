@@ -1,6 +1,6 @@
 from fastapi import APIRouter, status
 
-from source.schema import health
+from backend.schema import health
 
 router = APIRouter()
 

@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 from loguru import logger
 
-from source.api.v1 import resources
-from source.core.config import config
+from backend.api.v1 import resources
+from backend.core.config import config
 
 version = "v1"
 api_router = APIRouter()
