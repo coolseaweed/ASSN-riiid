@@ -1,0 +1,41 @@
+version: '3.9'
+
+x-base_service: &base_service
+
+  volumes:
+    - &v_data ./P3:/data
+  environment:
+    TZ: Asia/Seoul
+  stop_signal: SIGKILL
+  tty: true
+
+name: riiid-p3
+
+services:
+  
+  # ----- BACKEND ----- #
+  prod:
+    <<: *base_service
+    ports:
+      - "${PROD_PORT:-18080}:8080"
+    profiles: ["prod"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    volumes:
+      - *v_data
+
+  dev:
+    <<: *base_service
+    ports:
+      - "${DEV_PORT:-18081}:8080"
+    profiles: ["dev"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - *v_data
+      - .:/api
+    command: /bin/bash
