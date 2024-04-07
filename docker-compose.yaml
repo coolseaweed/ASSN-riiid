@@ -32,12 +32,14 @@ services:
       - "${DEV_PORT:-18080}:8080"
     profiles: [ "serve" ]
     environment:
-      MODEL-PATH: /models/model.save
+      MODEL_PATH: /models/model.pkl
     build:
       context: ./serve
       dockerfile: Dockerfile
       target: dev
     volumes:
+      - *v_model
+
       - *v_data # DEV
       - ./serve:/api # DEV
     command: /bin/bash # DEV
