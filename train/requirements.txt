@@ -1,0 +1,5 @@
+seaborn==0.13.2
+ipykernel
+imblearn
+scikit-learn
+pandas==2.2.1
