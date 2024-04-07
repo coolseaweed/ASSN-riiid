@@ -1,8 +1,6 @@
 version: '3.9'
 
-x-base_service:
-
-  &base_service
+x-base_service: &base_service
   volumes:
     - &v_data ./data:/data
     - &v_model ./models:/models
@@ -23,21 +21,23 @@ services:
       dockerfile: Dockerfile
       target: dev
     volumes:
-      - *v_data
       - *v_model
-      - ./train:/workspace/
-    command: /bin/bash
+      - *v_data
+      - ./train:/workspace/ # DEV
+    command: /bin/bash # DEV
 
   serve:
     <<: *base_service
     ports:
       - "${DEV_PORT:-18080}:8080"
     profiles: [ "serve" ]
+    environment:
+      MODEL-PATH: /models/model.save
     build:
-      context: .
+      context: ./serve
       dockerfile: Dockerfile
       target: dev
     volumes:
-      - *v_data
-      - .:/api
-    command: /bin/bash
+      - *v_data # DEV
+      - ./serve:/api # DEV
+    command: /bin/bash # DEV
