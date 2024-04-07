@@ -161,4 +161,5 @@ cython_debug/
 #.idea/
 .env
 
-P3/
+data
+models
