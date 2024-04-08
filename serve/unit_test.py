@@ -13,7 +13,7 @@ import random
 version = "v1"
 service_name = "student_perf"
 base_url = "http://test"
-data_path = Path("/home/tom/PRJ/Riiid/question3/data/data.csv")
+data_path = Path(config.data_path)
 
 
 def data_prep(data_path: Path = config.data_path) -> List[Dict]:
