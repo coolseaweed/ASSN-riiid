@@ -26,6 +26,7 @@ def get_config():
     _config["openapi_url"] = str(os.environ.get("OPENAPI_URL", "/openapi.json"))
     _config["swagger_url"] = str(os.environ.get("SWAGGER_URL", "/documentation"))
 
+    # custom parameters
     _config["model_path"] = str(os.environ.get("MODEL_PATH", "/models/model.pkl"))
     _config["one_hot_encoder_path"] = str(os.environ.get("ONE_HOT_ENCODER_PATH", "/models/one_hot_encoder.pkl"))
     _config["label_encoder_path"] = str(os.environ.get("LABEL_ENCODER_PATH", "/models/label_encoder.pkl"))
