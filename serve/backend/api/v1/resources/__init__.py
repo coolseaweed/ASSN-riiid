@@ -1,3 +1,3 @@
-from backend.api.v1.resources import health, student_perf
+from backend.api.v1.resources import student_perf
 
-__all__ = ["health", "student_perf"]
+__all__ = ["student_perf"]

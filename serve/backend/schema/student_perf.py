@@ -17,9 +17,6 @@ class StudentInfo(BaseModel):
     self_lms: Literal["No", "Yes"]
     device: Literal["Tab", "Mobile", "Computer"]
 
-    def to_df(self):
-        """convert dataframe"""
-
 
 class PredictResponse(BaseModel):
     adaptivity_level: Literal["Moderate", "Low", "High"]
