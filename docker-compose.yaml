@@ -23,8 +23,8 @@ services:
     volumes:
       - *v_model
       - *v_data
-      - ./train:/workspace/ # DEV
-    command: /bin/bash # DEV
+    #   - ./train:/workspace/ # DEV
+    # command: /bin/bash # DEV
 
   serve:
     <<: *base_service
