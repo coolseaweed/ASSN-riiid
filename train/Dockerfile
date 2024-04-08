@@ -15,3 +15,5 @@ WORKDIR ${WORKDIR}
 
 COPY . ${WORKDIR}
 RUN pip install --upgrade pip -r requirements.txt
+
+CMD [ "/bin/bash" ]
