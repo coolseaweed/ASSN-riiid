@@ -13,9 +13,7 @@ FROM base AS runtime
 WORKDIR /api
 RUN mkdir /api/logs
 
-COPY requirements.txt /api/requirements.txt
-COPY backend /api/backend
-COPY run.py /api/run.py
+COPY . /api/
 RUN pip install --upgrade pip -r requirements.txt
 CMD [ "python" ,"/api/run.py" ]
 
