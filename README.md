@@ -1,4 +1,4 @@
-# Riiid problem 3 
+# Riiid problem 3 가이드 문서
 
 ## 1. Training
 ### 1-1. 학습 모델
@@ -45,3 +45,8 @@ docker compose --profile serve up -d --build
 1. 비동기 `/predict` 동시 요청
 2. `/batch` 요청
 3. input 데이터 검증
+
+아래 커맨드를 통해서 테스트 할 수 있습니다.
+```bash
+docker exec riiid-p3-serve-1 pytest unit_test.py
+```

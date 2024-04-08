@@ -38,5 +38,5 @@ services:
     volumes:
       - *v_model
       - *v_data
-      - ./serve:/api # DEV
-    command: /bin/bash # DEV
+    #   - ./serve:/api # DEV
+    # command: /bin/bash # DEV
