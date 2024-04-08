@@ -13,7 +13,5 @@ def _add_router(router, prefix):
     api_router.include_router(router, prefix=prefix, dependencies=[])
 
 
-# add all sub-routers, for each task
-
 logger.debug("starting routes for API")
-_add_router(resources.health.router, prefix="")
+_add_router(resources.student_perf.router, prefix=f"/{version}/student_perf")

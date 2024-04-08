@@ -1,6 +1,8 @@
-fastapi==0.91.0
+fastapi
 openai
 uvicorn==0.20.0
 python-dotenv
 loguru==0.6.0
 numpy
+pydantic==2.5
+scikit-learn

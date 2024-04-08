@@ -26,6 +26,8 @@ def get_config():
     _config["openapi_url"] = str(os.environ.get("OPENAPI_URL", "/openapi.json"))
     _config["swagger_url"] = str(os.environ.get("SWAGGER_URL", "/documentation"))
 
+    _config["model_path"] = str(os.environ.get("MODEL_PATH", "/models/model.save"))
+
     # make dataclass to access these variables
     Config = make_dataclass("Config", fields=[(k, type(v)) for k, v in _config.items()])
     config = Config(**_config)
