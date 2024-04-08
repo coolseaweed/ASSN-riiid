@@ -1,4 +1,4 @@
-# Riiid problem 3 
+# Riiid problem 3 가이드 문서
 
 ## 1. Training
 ### 1-1. 학습 모델
@@ -30,8 +30,23 @@ docker exec riiid-p3-train-1 python train.py [--overwrite]
 
 ## 2. Serving
 ### 2-1. 서빙 아키텍처
+![image](./asset/diagram.png)
 
 ### 2-2. 환경 셋업
 ```
-docker compose --profile train up -d --build 
+docker compose --profile serve up -d --build 
+```
+### 2-3. swagger 페이지
+**URL**: `http://0.0.0.0:8080/documentation`
+![image](./asset/swagger_page.png)
+### 2-4. Unit Test
+유닛 테스트 코드는 [`./serve/unit_test.py`](./serve/unit_test.py) 에서 확인할 수 있으며, 테스트 목표는 다음 3가지 입니다.
+
+1. 비동기 `/predict` 동시 요청
+2. `/batch` 요청
+3. input 데이터 검증
+
+아래 커맨드를 통해서 테스트 할 수 있습니다.
+```bash
+docker exec riiid-p3-serve-1 pytest unit_test.py
 ```

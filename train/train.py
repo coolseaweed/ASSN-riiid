@@ -145,7 +145,7 @@ def main():
     # save models
     save_model(model, model_fpath, overwrite=args.overwrite)
     save_model(label_encoder, label_encoder_fpath, overwrite=args.overwrite)
-    save_model(one_hot_encoder, one_hot_encoder_fpath, overwrite=args.overwrite)
+    save_model(ohe, one_hot_encoder_fpath, overwrite=args.overwrite)
 
 
 if __name__ == "__main__":
