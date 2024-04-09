@@ -96,12 +96,3 @@ for k, v in dataclasses.asdict(config).items():
 # display version info
 logger.debug(f"version: {version_number}\nfeature: {version_info}")
 app, wrapped_app = create_app()
-
-
-# # check db
-# @app.on_event("startup")
-# async def startup_check():
-
-
-# @app.on_event("shutdown")
-# async def shutdown_event():
