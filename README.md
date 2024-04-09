@@ -36,11 +36,14 @@ docker exec riiid-p3-train-1 python train.py [--overwrite]
 docker compose --profile serve up -d --build 
 ```
 ### 2-3. swagger 페이지
-**Default url**: `http://0.0.0.0:8080/documentation`
-
 ![image](./asset/swagger_page.png)
 
-제공된 [`docker-compose.yaml`](./docker-compose.yaml)에서 `serve`파트를 참조하시면, `localhost`의 포트 `8080`을 통해 컨테이너에 접근가능 할 수 있도록 설정했습니다.
+**Default url**: `http://0.0.0.0:8080/documentation`
+
+제공된 [`docker-compose.yaml`](./docker-compose.yaml)에서 `serve` 부분을 참조하시면, `localhost`의 포트 `8080`을 통해 컨테이너에 접근가능 할 수 있도록 설정했습니다.
+
+![image](./asset/json.png)
+swagger page에 접속하시면 request를 위한 json 포맷의 `Schema` 정의를 확인하실 수 있으며, [`StudnetInfo`](./serve/backend/schema/student_perf.py) 데이터 클래스를 참조하시길 바랍니다.
 
 
 
